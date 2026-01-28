@@ -43,3 +43,48 @@ def product_create(request):
         'products/product_form.html',
         {'form': form}
     )
+
+@login_required
+def product_update(request, pk):
+    if not request.user.is_seller():
+        raise PermissionDenied
+
+    product = get_object_or_404(Product, pk=pk)
+
+    if product.store != request.user.store:
+        raise PermissionDenied
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect('product_list')
+    else:
+        form = ProductForm(instance=product)
+
+    return render(
+        request,
+        'products/product_form.html',
+        {'form': form, 'product': product}
+    )
+
+
+@login_required
+def product_delete(request, pk):
+    if not request.user.is_seller():
+        raise PermissionDenied
+
+    product = get_object_or_404(Product, pk=pk)
+
+    if product.store != request.user.store:
+        raise PermissionDenied
+
+    if request.method == 'POST':
+        product.delete()
+        return redirect('product_list')
+
+    return render(
+        request,
+        'products/product_confirm_delete.html',
+        {'product': product}
+    )
