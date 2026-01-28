@@ -1,0 +1,13 @@
+<h1>Mis productos</h1>
+
+<a href="{% url 'product_create' %}">Añadir producto</a>
+
+{% for product in products %}
+    <div>
+        <h3>{{ product.name }}</h3>
+        <p>Precio: ${{ product.price }}</p>
+        <p>Stock: {{ product.stock }}</p>
+    </div>
+{% empty %}
+    <p>No tienes productos aún.</p>
+{% endfor %}
