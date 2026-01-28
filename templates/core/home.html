@@ -1,0 +1,12 @@
+<h1>Bienvenido a ShopStarter</h1>
+
+{% if user.is_authenticated %}
+    <p>Hola {{ user.username }}</p>
+    <a href="{% url 'logout' %}">Cerrar sesión</a>
+{% else %}
+    <a href="{% url 'login' %}">Iniciar sesión</a>
+    <br>
+    <a href="{% url 'register_client' %}">Registrarse como cliente</a>
+    <br>
+    <a href="{% url 'register_seller' %}">Registrarse como vendedor</a>
+{% endif %}
