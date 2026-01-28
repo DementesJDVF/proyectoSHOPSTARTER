@@ -1,0 +1,7 @@
+<h2>Crear mi estante</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear estante</button>
+</form>
