@@ -1,0 +1,14 @@
+<h1>Estantes disponibles</h1>
+
+{% for store in stores %}
+    <div>
+        <h3>
+            <a href="{% url 'store_detail' store.pk %}">
+                {{ store.name }}
+            </a>
+        </h3>
+        <p>{{ store.description|truncatewords:20 }}</p>
+    </div>
+{% empty %}
+    <p>No hay estantes disponibles.</p>
+{% endfor %}

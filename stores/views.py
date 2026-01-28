@@ -32,3 +32,6 @@ def store_detail(request, pk):
     store = get_object_or_404(Store, pk=pk, is_active=True)
     return render(request, 'stores/store_detail.html', {'store': store})
 
+def store_list(request):
+    stores = Store.objects.filter(is_active=True)
+    return render(request, 'stores/store_list.html', {'stores': stores})
