@@ -1,0 +1,16 @@
+<h1>Dashboard del Vendedor</h1>
+
+{% if store %}
+    <h2>Mi estante</h2>
+    <p><strong>{{ store.name }}</strong></p>
+    <p>{{ store.description }}</p>
+
+    <a href="{% url 'store_detail' store.pk %}">
+        Ver estante público
+    </a>
+{% else %}
+    <p>Aún no tienes un estante.</p>
+    <a href="{% url 'store_create' %}">
+        Crear mi estante
+    </a>
+{% endif %}

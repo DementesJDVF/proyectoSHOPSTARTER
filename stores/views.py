@@ -35,3 +35,16 @@ def store_detail(request, pk):
 def store_list(request):
     stores = Store.objects.filter(is_active=True)
     return render(request, 'stores/store_list.html', {'stores': stores})
+
+@login_required
+def seller_dashboard(request):
+    if not request.user.is_seller():
+        raise PermissionDenied
+
+    store = getattr(request.user, 'store', None)
+
+    return render(
+        request,
+        'stores/dashboard.html',
+        {'store': store}
+    )
