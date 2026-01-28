@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.core.exceptions import PermissionDenied
+from django.shortcuts import get_object_or_404
 
 from .forms import StoreForm
 from .models import Store
@@ -26,3 +27,8 @@ def create_store(request):
         form = StoreForm()
 
     return render(request, 'stores/create_store.html', {'form': form})
+
+def store_detail(request, pk):
+    store = get_object_or_404(Store, pk=pk, is_active=True)
+    return render(request, 'stores/store_detail.html', {'store': store})
+
