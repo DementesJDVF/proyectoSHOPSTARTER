@@ -1,75 +1,68 @@
-🛒 ShopStarter
+🛒ShopStarter
 
-ShopStarter es una plataforma web e-commerce desarrollada con Django, orientada a digitalizar a vendedores ambulantes, puerta a puerta y pequeños comerciantes, permitiéndoles crear estantes digitales, gestionar productos e inventario y conectar con clientes de forma sencilla y escalable.
+ShopStarter es una plataforma e‑commerce web desarrollada con Django, orientada a emprendedores, microcomerciantes y vendedores ambulantes, que busca cerrar la brecha entre el comercio tradicional y el comercio digital.
 
-Este proyecto forma parte de mi portafolio de desarrollo, enfocado en buenas prácticas, arquitectura limpia y trabajo ágil con SCRUM.
+El proyecto está diseñado bajo buenas prácticas de ingeniería de software, principios de Clean Code, arquitectura escalable y una gestión basada en SCRUM.
 
-🚀 Problema que resuelve
+Visión del Proyecto
 
-Muchos pequeños vendedores:
+Revolucionar la forma de comprar y vender, empoderando a pequeños vendedores mediante una plataforma digital intuitiva que les permita:
 
-No tienen presencia digital
+Crear estantes digitales
 
-Dependen únicamente de la ubicación física
+Gestionar productos e inventario
 
-Carecen de herramientas para gestionar inventario y ventas
+Conectar con clientes de forma directa
 
-ShopStarter busca cerrar esa brecha entre el comercio tradicional y el digital.
+Aumentar su alcance sin depender de un local físico
 
-🎯 Objetivo del proyecto
+Objetivos
 
-Construir una plataforma:
+Digitalizar el comercio informal y tradicional
 
-Intuitiva para vendedores no técnicos
+Facilitar la gestión de productos y ventas
 
-Escalable a nivel técnico
+Mejorar la visibilidad y comunicación vendedor–cliente
 
-Alineada a buenas prácticas de desarrollo profesional
+Construir una base técnica sólida y escalable
 
-👥 Usuarios objetivo
+Alcance del Proyecto
+Incluye
 
-Vendedores ambulantes
-
-Vendedores puerta a puerta
-
-Microempresarios
-
-Clientes que buscan productos cercanos y accesibles
-
-🧩 Funcionalidades (MVP)
-
-Registro y gestión de usuarios
-
-Creación de estantes digitales
+Registro y autenticación de usuarios
 
 Gestión de productos e inventario
 
-Control básico de ventas
+Subida de imágenes
 
-Base preparada para ubicación y promociones
+Panel de vendedor
 
-🛠️ Stack tecnológico
+Visualización de productos para clientes
 
-Backend
+No incluye
 
-Python
+Servicios de logística o repartidores
 
-Django
+Bodegas físicas
 
-Base de datos
+Puestos de venta propios
 
-por definir
+Arquitectura Técnica
 
-Frontend
+Backend: Django, Django ORM
 
-Django Templates
+Frontend: Django Templates (HTML, CSS)
 
-Dev & Tools
+Base de datos: SQLite (dev) / MySQL (prod)
 
-Git & GitHub
+Control de versiones: Git + GitHub
 
-Entornos virtuales (venv)
+Metodología: SCRUM
 
-Variables de entorno (.env)
+Arquitectura basada en:
 
-Metodología SCRUM
+Separación de responsabilidades
+
+Apps desacopladas
+
+Vistas limpias
