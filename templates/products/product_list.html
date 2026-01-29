@@ -9,6 +9,10 @@
         <p>Precio: ${{ product.price }}</p>
         <p>Stock: {{ product.stock }}</p>
 
+        <a href="{% url 'product_add_image' product.pk %}">
+        Añadir imagen
+        </a>
+        
         <!-- Acciones -->
         <a href="{% url 'product_update' product.pk %}">Editar</a>
         |
