@@ -89,14 +89,17 @@ def product_list(request):
     if not request.user.is_seller():
         raise PermissionDenied
 
-    products = Product.objects.filter(store__owner=request.user)
+    products = Product.objects.filter(store__owner=request.user).prefetch_related('images')
+
+    for product in products:
+        product.main_image = product.images.filter(is_main=True).first()
 
     return render(
         request,
         'products/product_list.html',
         {'products': products}
     )
-    
+
 @login_required
 def product_add_image(request, pk):
     product = get_object_or_404(
@@ -110,6 +113,10 @@ def product_add_image(request, pk):
         if form.is_valid():
             image = form.save(commit=False)
             image.product = product
+
+            if image.is_main:
+                product.images.update(is_main=False)
+
             image.save()
             return redirect('product_list')
     else:
