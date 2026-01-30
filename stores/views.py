@@ -29,8 +29,17 @@ def create_store(request):
     return render(request, 'stores/create_store.html', {'form': form})
 
 def store_detail(request, pk):
-    store = get_object_or_404(Store, pk=pk, is_active=True)
-    return render(request, 'stores/store_detail.html', {'store': store})
+    store = get_object_or_404(Store, pk=pk)
+    products = store.products.all()
+
+    return render(
+        request,
+        'stores/store_detail.html',
+        {
+            'store': store,
+            'products': products
+        }
+    )
 
 def store_list(request):
     stores = Store.objects.filter(is_active=True)
