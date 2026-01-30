@@ -66,3 +66,37 @@ Separación de responsabilidades
 Apps desacopladas
 
 Vistas limpias
+
+Calidad y Buenas Prácticas
+
+Código legible y documentado
+
+Convenciones Django
+
+Principios SOLID
+
+Separación clara entre lógica y presentación
+
+Optimización de consultas ORM
+
+Metodología SCRUM
+
+El proyecto se desarrolla de forma incremental:
+
+Épicas
+
+Historias de Usuario
+
+Sprints
+
+Criterios de aceptación claros
+
+Toda la planificación vive alineada al Product Backlog.
+
+Autor
+
+SHOPSTARTER
+JULIAN DAVID VASQUEZ FERNANDEZ
+ALDAIR CALAMBAS TROCHEZ
+NEYTHAN ANDRES AYALA MOSQUERA
+JHONATAN ZEMANATE JOAQUI
